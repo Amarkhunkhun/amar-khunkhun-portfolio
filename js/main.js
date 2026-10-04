@@ -369,6 +369,11 @@
         var isCurrent = l.getAttribute("data-target") === id;
         l.setAttribute("aria-current", isCurrent ? "true" : "false");
       });
+      var onDark = id === "intro";
+      var monogramEl = document.querySelector(".monogram");
+      var sideNavEl = document.querySelector(".side-nav");
+      if (monogramEl) monogramEl.classList.toggle("on-dark", onDark);
+      if (sideNavEl) sideNavEl.classList.toggle("on-dark", onDark);
     }
     window.addEventListener("scroll", debounce(syncActive, 50), { passive: true });
     syncActive();

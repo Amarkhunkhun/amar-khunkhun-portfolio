@@ -106,6 +106,8 @@ h1,h2,h3,p{ margin:0; }
   transition: color .3s var(--ease-out), transform .3s var(--ease-out);
 }
 .monogram:hover{ color: var(--accent); transform: scale(1.08); }
+.monogram.on-dark{ color: #FBF8F6; }
+.monogram.on-dark:hover{ color: var(--accent); }
 
 /* ==========================================================================
    Side nav (desktop)
@@ -140,6 +142,9 @@ h1,h2,h3,p{ margin:0; }
 .side-nav-link:hover{ color: var(--ink); }
 .side-nav-link[aria-current="true"]{ color: var(--accent); }
 .side-nav-link[aria-current="true"]::before{ height: 26px; }
+.side-nav.on-dark .side-nav-link{ color: rgba(251,248,246,0.55); }
+.side-nav.on-dark .side-nav-link:hover{ color: #FBF8F6; }
+.side-nav.on-dark .side-nav-link[aria-current="true"]{ color: var(--accent); }
 
 /* ==========================================================================
    Mobile bar + menu
@@ -196,6 +201,22 @@ h1,h2,h3,p{ margin:0; }
   overflow: hidden;
   background: var(--bg);
 }
+.intro-bg{
+  position: absolute; inset: 0;
+  z-index: 0;
+}
+.intro-bg img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+.intro-scrim{
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    rgba(31,38,29,0.32) 0%,
+    rgba(31,38,29,0.5) 55%,
+    rgba(31,38,29,0.74) 100%);
+}
 .intro-pin{
   position: relative;
   width: 100%; height: 100vh;
@@ -231,7 +252,8 @@ h1,h2,h3,p{ margin:0; }
   line-height: 0.92;
   font-size: clamp(7vw, 10vw, 12vw);
   white-space: nowrap;
-  color: var(--ink);
+  color: #FBF8F6;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.25);
   will-change: transform, opacity;
 }
 .intro-name-line{ display:block; }
@@ -243,7 +265,7 @@ h1,h2,h3,p{ margin:0; }
   font-size: clamp(11px, 1.1vw, 14px);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: rgba(251,248,246,0.82);
 }
 .intro-scroll-cue{
   margin-top: 14px;
@@ -251,7 +273,7 @@ h1,h2,h3,p{ margin:0; }
   font-size: 10px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--ink-faint);
+  color: rgba(251,248,246,0.55);
 }
 .intro-scroll-cue span{
   display:inline-block;
